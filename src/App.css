@@ -2165,7 +2165,6 @@ html, body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: grayscale(100%) contrast(110%) brightness(105%);
   opacity: 0;
   will-change: background-image;
   transform: translateZ(0); /* Force hardware acceleration */
