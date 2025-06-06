@@ -1,0 +1,2103 @@
+@font-face {
+  font-family: 'NotoSerifDisplayExtraCondensed';
+  src: url('../public/font/Noto-Serif-Display-ExtraCondensed.ttf.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Reset global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.nav-menu {
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  transition: top 0.3s ease;
+}
+
+.nav-menu-open {
+  top: 0;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.nav-link:hover {
+  color: #8c2228;
+}
+
+.nav-hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 0.5rem;
+  align-self: flex-end;
+  position: relative;
+  z-index: 1001;
+}
+
+.hamburger-line {
+  width: 25px;
+  height: 3px;
+  background-color: #2b2b2b;
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* Mobile hamburger animation */
+.line-1-active {
+  transform: rotate(-45deg) translate(-5px, 6px);
+  background-color: white;
+}
+
+.line-2-active {
+  opacity: 0;
+}
+
+.line-3-active {
+  transform: rotate(45deg) translate(-5px, -6px);
+  background-color: white;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.app {
+  min-height: 200vh;
+  width: 100vw;
+  background: #770808;
+  display: block;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  padding: 6vh 3% 0 3%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  background-color: #770808;
+}
+
+.center-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+  gap: 4vh;
+}
+
+.header-text {
+  font-size: clamp(18px, 5.5vw, 28px);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: #8c2228;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin: 0;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.main-text {
+  font-size: clamp(80px, 22vw, 160px);
+  font-weight: normal;
+  letter-spacing: -0.02em;
+  color: #640a0c;
+  line-height: 0.85;
+  font-family: 'NotoSerifDisplayExtraCondensed', serif;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: clamp(10px, 2.8vw, 14px);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #8c2228;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin: 0;
+  flex-shrink: 0;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 3vh;
+}
+
+/* Save the Date Section */
+.save-the-date-section {
+  height: 100vh;
+  width: 100%;
+  background: #f5f0e8;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+.save-the-date-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  max-width: 600px;
+  padding: 8vh 3% 6vh 3%;
+  gap: 2vh;
+}
+
+.save-text {
+  font-size: clamp(80px, 20vw, 160px);
+  font-weight: normal;
+  font-style: italic;
+  letter-spacing: -0.08em;
+  color: #8b1a1a;
+  line-height: 0.8;
+  font-family: 'NotoSerifDisplayExtraCondensed', serif;
+  margin: 0;
+  text-align: center;
+  transform: translateX(-2px);
+}
+
+.the-date-text {
+  font-size: clamp(44px, 11vw, 88px);
+  font-weight: normal;
+  letter-spacing: -0.07em;
+  color: #8b1a1a;
+  line-height: 0.8;
+  font-family: 'NotoSerifDisplayExtraCondensed', serif;
+  margin: 0;
+  text-align: center;
+  margin-top: -1vh;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3vh 0 2vh 0;
+}
+
+.date-icon {
+  width: clamp(40px, 8vw, 80px);
+  height: auto;
+}
+
+.photo-container {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: center;
+}
+
+.graduation-photo {
+  width: 100%;
+  max-width: 500px;
+  height: 350px;
+  object-fit: contain;
+  filter: grayscale(100%);
+}
+
+/* Date Details Section */
+.date-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5vh;
+  margin: 2vh 0;
+}
+
+.date-main {
+  font-size: clamp(24px, 6vw, 40px);
+  font-weight: 600;
+  color: #8b1a1a;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.date-year {
+  font-size: clamp(32px, 8vw, 50px);
+  font-weight: 700;
+  color: #8b1a1a;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.date-time {
+  font-size: clamp(18px, 4.5vw, 28px);
+  font-weight: 500;
+  color: #8b1a1a;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.03em;
+}
+
+/* Misa Section */
+.misa-section {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #770808 0%, #8b1a1a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 3;
+}
+
+.misa-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  max-width: 700px;
+  padding: 6vh 3% 6vh 3%;
+  gap: 3vh;
+}
+
+.misa-title {
+  font-size: clamp(48px, 12vw, 90px);
+  font-weight: normal;
+  font-style: italic;
+  letter-spacing: -0.05em;
+  color: #f5f0e8;
+  line-height: 0.9;
+  font-family: 'NotoSerifDisplayExtraCondensed', serif;
+  margin: 0;
+}
+
+.misa-subtitle {
+  font-size: clamp(32px, 8vw, 60px);
+  font-weight: normal;
+  letter-spacing: -0.03em;
+  color: #f5f0e8;
+  line-height: 0.9;
+  font-family: 'NotoSerifDisplayExtraCondensed', serif;
+  margin: 0;
+  margin-top: -1vh;
+}
+
+.misa-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+  margin: 2vh 0;
+}
+
+.misa-date,
+.misa-time,
+.misa-location {
+  font-size: clamp(16px, 4vw, 22px);
+  font-weight: 400;
+  color: #f5f0e8;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+
+.misa-date strong,
+.misa-time strong,
+.misa-location strong {
+  font-weight: 600;
+  color: #f5f0e8;
+}
+
+.misa-invitation {
+  margin: 2vh 0;
+  max-width: 500px;
+}
+
+.misa-invitation p {
+  font-size: clamp(14px, 3.5vw, 18px);
+  font-weight: 400;
+  color: #f5f0e8;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+  margin: 0.5vh 0;
+}
+
+.misa-footer {
+  margin-top: 2vh;
+}
+
+.misa-footer p {
+  font-size: clamp(12px, 3vw, 16px);
+  font-weight: 300;
+  color: #f5f0e8;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+  font-style: italic;
+}
+
+/* Nueva Misa Section */
+.misa-section {
+  height: 100vh;
+  width: 100%;
+  background: #f5f0e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 3;
+}
+
+.misa-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  max-width: 600px;
+  padding: 8vh 3% 6vh 3%;
+  gap: 4vh;
+}
+
+.misa-title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.misa-title-line1 {
+  font-size: clamp(48px, 12vw, 82px);
+  font-weight: normal;
+  font-style: italic;
+  letter-spacing: -0.06em;
+  color: #2b2b2b;
+  line-height: 0.9;
+  font-family: 'NotoSerifDisplayExtraCondensed', serif;
+  margin: 0;
+  text-align: center;
+}
+
+.misa-title-line2 {
+  font-size: clamp(48px, 12vw, 82px);
+  font-weight: normal;
+  font-style: italic;
+  letter-spacing: -0.06em;
+  color: #2b2b2b;
+  line-height: 0.9;
+  font-family: 'NotoSerifDisplayExtraCondensed', serif;
+  margin: 0;
+  text-align: center;
+  margin-top: -5px;
+}
+
+.misa-date-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0vh;
+}
+
+.misa-date {
+  font-size: clamp(24px, 6vw, 36px);
+  font-weight: 400;
+  color: #000000;
+  font-family: 'Antic Didone', serif;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  margin: 0;
+  text-align: center;
+}
+
+.misa-time {
+  font-size: clamp(20px, 5vw, 30px);
+  font-weight: 400;
+  color: #000000;
+  font-family: 'Antic Didone', serif;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  margin: 0;
+  text-align: center;
+}
+
+.misa-church-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2vh 0;
+}
+
+.vertical-line-top,
+.vertical-line-bottom {
+  width: 0.1px;
+  height: 40px;
+  background-color: #2b2b2b;
+  margin: 0;
+}
+
+.vertical-line-top {
+  margin-bottom: 8px;
+  margin-left: 6px;
+}
+
+.vertical-line-bottom {
+  margin-top: 8px;
+  margin-left: 6px;
+}
+
+.church-illustration {
+  width: clamp(275px, 59vw, 422px);
+  height: auto;
+  margin: 0;
+  margin-right: 16px;
+}
+
+.misa-location {
+  font-size: clamp(16px, 4vw, 22px);
+  font-weight: 400;
+  color: #000000;
+  font-family: 'Antic Didone', serif;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+  margin: 0;
+  text-align: center;
+}
+
+.misa-location-button {
+  font-size: clamp(14px, 3.5vw, 18px);
+  font-weight: 400;
+  color: #000000;
+  font-family: 'Antic Didone', serif;
+  letter-spacing: 0.1em;
+  line-height: 0.9;
+  margin: 0;
+  text-align: center;
+  border: 0.3px solid #000000;
+  border-radius: 25px;
+  padding: 12px 24px;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.misa-location-button:hover {
+  background-color: #000000;
+  color: #f5f0e8;
+}
+
+/* Fuente Section */
+.fuente-section {
+  height: 100vh;
+  width: 100%;
+  background: #f5f0e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 4;
+}
+
+.fuente-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  max-width: 600px;
+  padding: 8vh 3% 6vh 3%;
+  gap: 3vh;
+}
+
+.fuente-title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+}
+
+.fuente-top-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+}
+
+.fuente-the {
+  font-size: clamp(35px, 8vw, 58px);
+  font-weight: normal;
+  letter-spacing: -0.04em;
+  color: #640a0c;
+  line-height: 0.9;
+  font-family: 'NotoSerifDisplayExtraCondensed', serif;
+  margin: 0;
+  transform: translateY(-18px);
+  
+}
+
+.fuente-prom {
+  font-size: clamp(75px, 19vw, 135px);
+  font-weight: normal;
+  letter-spacing: -0.08em;
+  color: #640a0c;
+  line-height: 0.8;
+  font-family: 'NotoSerifDisplayExtraCondensed', serif;
+  margin: 0;
+  margin-right: 30px;
+}
+
+.fuente-lem {
+  font-size: clamp(37px, 9vw, 62px);
+  font-weight: normal;
+  letter-spacing: -0.02em;
+  color: #640a0c;
+  line-height: 0.9;
+  font-family: 'NotoSerifDisplayExtraCondensed', serif;
+  margin: 0;
+  margin-top: -4px;
+  align-self: flex-end;
+  margin-right: 13%;
+}
+
+.fuente-date-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.date-separator-line {
+  width: 1px;
+  height: 45px;
+  background-color: #2b2b2b;
+  margin: 0;
+}
+
+.fuente-month {
+  font-size: clamp(22px, 5.5vw, 32px);
+  font-weight: 400;
+  color: #2b2b2b;
+  font-family: 'Antic Didone', serif;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  margin: 0;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.fuente-day {
+  font-size: clamp(45px, 11vw, 70px);
+  font-weight: 400;
+  color: #2b2b2b;
+  font-family: 'NotoSerifDisplayExtraCondensed', serif;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+  margin: 0;
+  text-align: center;
+}
+
+.fuente-year {
+  font-size: clamp(22px, 5.5vw, 32px);
+  font-weight: 400;
+  color: #2b2b2b;
+  font-family: 'Antic Didone', serif;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  margin: 0;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.fuente-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2vh 0;
+}
+
+.vertical-line-top-fuente,
+.vertical-line-bottom-fuente {
+  width: 0.1px;
+  height: 40px;
+  background-color: #2b2b2b;
+  margin: 0;
+}
+
+.vertical-line-top-fuente {
+  margin-bottom: 8px;
+}
+
+.vertical-line-bottom-fuente {
+  margin-top: 8px;
+}
+
+.fuente-illustration {
+  width: clamp(250px, 55vw, 400px);
+  height: auto;
+  margin: 0;
+}
+
+.fuente-venue {
+  font-size: clamp(28px, 7vw, 50px);
+  font-weight: normal;
+  letter-spacing: -0.04em;
+  color: #2b2b2b;
+  line-height: 0.9;
+  font-family: 'NotoSerifDisplayExtraCondensed', serif;
+  margin: 0;
+  text-align: center;
+}
+
+.fuente-location {
+  font-size: clamp(13px, 2vw, 19px);
+  font-weight: 400;
+  color: #000000;
+  font-family: 'Antic Didone', serif;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+  margin: 0;
+  text-align: center;
+  margin-top: -15px;
+}
+
+.fuente-location-button {
+  font-size: clamp(14px, 3.5vw, 18px);
+  font-weight: 400;
+  color: #000000;
+  font-family: 'Antic Didone', serif;
+  letter-spacing: 0.1em;
+  line-height: 0.9;
+  margin: 0;
+  text-align: center;
+  border: 0.3px solid #000000;
+  border-radius: 25px;
+  padding: 12px 24px;
+  
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fuente-location-button:hover {
+  background-color: #000000;
+  color: #f5f0e8;
+}
+
+/* Dress Code Section */
+.dress-code-section {
+  height: 100vh;
+  width: 100%;
+  background: #f5f0e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 5;
+}
+
+.dress-code-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  max-width: 600px;
+  padding: 8vh 3% 0 3%;
+}
+
+.dress-code-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: -1vh;
+  margin-bottom: 2vh;
+}
+
+.dress-text {
+  font-size: clamp(90px, 22vw, 160px);
+  font-weight: normal;
+  letter-spacing: -0.08em;
+  color: #2b2b2b;
+  line-height: 0.8;
+  font-family: 'NotoSerifDisplayExtraCondensed', serif;
+  margin: 0;
+  text-align: center;
+}
+
+.code-text {
+  font-size: clamp(90px, 22vw, 160px);
+  font-weight: normal;
+  letter-spacing: -0.08em;
+  color: #2b2b2b;
+  line-height: 0.8;
+  font-family: 'NotoSerifDisplayExtraCondensed', serif;
+  margin: 0;
+  text-align: center;
+  margin-top: -5px;
+}
+
+.dress-code-info {
+  margin: 3vh 0 3.5vh 0;
+  height: auto;
+  min-height: 25vh;
+  gap: 4vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 6vh;
+  margin: 4vh 0;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  height: 30vh;
+}
+
+.dress-event-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5vh;
+  position: absolute;
+  width: 45%;
+}
+
+.dress-event-group:first-child {
+  top: 0;
+  left: 15%;
+}
+
+.dress-event-group:last-child {
+  bottom: 0;
+  right: 15%;
+}
+
+.dress-event-title {
+  font-size: clamp(18px, 4.5vw, 26px);
+  font-weight: 400;
+  color: #2b2b2b;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  margin: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.dress-event-desc {
+  font-size: clamp(12px, 3vw, 18px);
+  font-weight: 400;
+  color: #000000;
+  font-family: 'Antic Didone', serif;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+  margin: 0;
+  text-align: center;
+}
+
+.dress-code-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.couple-illustration {
+  width: clamp(180px, 45vw, 300px);
+  height: auto;
+  margin: 0;
+}
+
+/* Footer */
+.footer {
+  background: #000000;
+  color: white;
+  padding: 2rem 0 1rem 0;
+  margin-top: 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo-img {
+  height: 60px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  color: #888;
+}
+
+/* ============================================ */
+/* FONDOS RESPONSIVOS */
+/* ============================================ */
+
+/* Fondos para desktop - implementación original restaurada */
+@media (min-width: 769px) {
+  .app {
+    background-image: 
+      url('../public/svg/fondo.svg'),
+      url('../public/svg/fondo2.svg');
+    background-size: 80%, 85%;
+    background-position: bottom 0 right -15%, top 0 left -8%;
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: fixed;
+  }
+  
+  .content {
+    background-color: transparent;
+  }
+}
+
+/* Fondos para móvil - evita problemas de viewport en .content */
+@media (max-width: 768px) {
+  .content {
+    background-image: 
+      url('../public/svg/fondo.svg'),
+      url('../public/svg/fondo2.svg');
+    background-size: 80%, 85%;
+    background-position: bottom 0 right -15%, top 0 left -8%;
+    background-repeat: no-repeat, no-repeat;
+  }
+}
+
+/* Mobile optimization for Save the Date */
+@media (max-width: 768px) {
+  .content {
+    padding: 5vh 2% 5vh 2%;
+  }
+  
+  .center-group {
+    gap: 3vh;
+  }
+  
+  .header-text {
+    font-size: clamp(16px, 5.8vw, 24px);
+    letter-spacing: 0.1em;
+    font-weight: 500;
+  }
+  
+  .main-text {
+    font-size: clamp(70px, 25vw, 140px);
+    letter-spacing: -0.015em;
+  }
+  
+  .footer-text {
+    font-size: clamp(9px, 3.2vw, 13px);
+    letter-spacing: 0.06em;
+    font-weight: 500;
+  }
+  
+  .save-the-date-content {
+    gap: 1.5vh;
+    padding: 6vh 3% 4vh 3%;
+  }
+  
+  .photo-placeholder {
+    height: 250px;
+  }
+
+  /* Dress code mobile adjustments */
+  .dress-code-info {
+    gap: 2vh;
+    height: 25vh;
+  }
+
+  .dress-event-group {
+    gap: 0.6vh;
+  }
+}
+
+/* Standard mobile devices */
+@media (max-width: 480px) {
+  .content {
+    padding: 4vh 2% 4vh 2%;
+  }
+  
+  .center-group {
+    gap: 2.5vh;
+  }
+  
+  .header-text {
+    font-size: clamp(14px, 6vw, 20px);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+  }
+  
+  .main-text {
+    font-size: clamp(60px, 28vw, 120px);
+    letter-spacing: -0.01em;
+  }
+  
+  .footer-text {
+    font-size: clamp(8px, 3.5vw, 12px);
+    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+  
+  .save-the-date-content {
+    gap: 1vh;
+    padding: 5vh 4% 3vh 4%;
+  }
+  
+  .photo-placeholder {
+    height: 200px;
+  }
+
+  /* Dress code mobile adjustments */
+  .dress-code-info {
+    gap: 1.5vh;
+    height: 22vh;
+  }
+
+  .dress-event-group {
+    gap: 0.5vh;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 375px) {
+  .content {
+    padding: 3vh 1% 3vh 1%;
+  }
+  
+  .center-group {
+    gap: 2vh;
+  }
+  
+  .header-text {
+    font-size: clamp(12px, 6.2vw, 18px);
+    letter-spacing: 0.06em;
+    font-weight: 400;
+  }
+  
+  .main-text {
+    font-size: clamp(50px, 30vw, 100px);
+    letter-spacing: 0;
+  }
+  
+  .footer-text {
+    font-size: clamp(7px, 3.8vw, 11px);
+    letter-spacing: 0.04em;
+    font-weight: 400;
+  }
+  
+  .photo-placeholder {
+    height: 180px;
+  }
+
+  /* Dress code mobile adjustments */
+  .dress-code-info {
+    gap: 1vh;
+    height: 20vh;
+  }
+
+  .dress-event-group {
+    gap: 0.4vh;
+  }
+}
+
+/* Ultra small devices */
+@media (max-width: 320px) {
+  .content {
+    padding: 2vh 1% 2vh 1%;
+  }
+  
+  .center-group {
+    gap: 1.5vh;
+  }
+  
+  .header-text {
+    font-size: clamp(10px, 6.5vw, 16px);
+    letter-spacing: 0.04em;
+    font-weight: 400;
+  }
+  
+  .main-text {
+    font-size: clamp(40px, 32vw, 80px);
+    letter-spacing: 0;
+  }
+  
+  .footer-text {
+    font-size: clamp(6px, 4vw, 10px);
+    letter-spacing: 0.02em;
+    font-weight: 400;
+  }
+  
+  .photo-placeholder {
+    height: 160px;
+  }
+
+  /* Dress code mobile adjustments */
+  .dress-code-info {
+    gap: 0.8vh;
+    height: 18vh;
+  }
+
+  .dress-event-group {
+    gap: 0.3vh;
+  }
+}
+
+/* Landscape orientation for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .content {
+    padding: 2vh 2% 2vh 2%;
+  }
+  
+  .center-group {
+    gap: 1vh;
+  }
+  
+  .header-text {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  
+  .main-text {
+    font-size: 50px;
+    letter-spacing: -0.01em;
+  }
+  
+  .footer-text {
+    font-size: 10px;
+    font-weight: 400;
+  }
+  
+  .save-the-date-content {
+    gap: 0.5vh;
+    padding: 2vh 3% 2vh 3%;
+  }
+  
+  .photo-placeholder {
+    height: 120px;
+  }
+}
+
+/* Desktop optimizations - Compact design with everything fitting in 100vh */
+@media (min-width: 1024px) {
+  /* Make background SVGs much smaller for desktop */
+  .app {
+    background-size: 25%, 30%;
+    background-position: bottom 0 right -5%, top 0 left -3%;
+  }
+
+  /* Fix section heights and prevent text overflow */
+  .content {
+    height: 100vh;
+    padding: 2vh 5% 2vh 5%;
+    gap: 1.5vh;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .save-the-date-section,
+  .misa-section,
+  .fuente-section,
+  .dress-code-section {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .save-the-date-content,
+  .misa-content,
+  .fuente-content,
+  .dress-code-content {
+    height: 100vh;
+    padding: 2vh 5% 2vh 5%;
+    box-sizing: border-box;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .center-group {
+    gap: 1vh;
+  }
+
+  .header-text {
+    font-size: 28px;
+    max-width: 800px;
+    margin-bottom: 0.5vh;
+  }
+
+  .main-text {
+    font-size: 160px;
+    max-width: 900px;
+    margin: 0.5vh 0 1vh 0;
+  }
+
+  .footer-text {
+    font-size: 14px;
+    max-width: 600px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
+
+  /* Save the Date section - ultra compact */
+  .save-the-date-content {
+    max-width: 1000px;
+    gap: 1.5vh;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+  }
+
+  .save-text {
+    font-size: 120px;
+    margin-bottom: 0.5vh;
+  }
+
+  .the-date-text {
+    font-size: 85px;
+    margin-bottom: 1vh;
+  }
+
+  .icon-container {
+    margin: 1vh 0 1.2vh 0;
+  }
+
+  .photo-container {
+    margin-top: 1.2vh;
+    margin-bottom: 1vh;
+  }
+
+  .graduation-photo {
+    max-width: 380px;
+    height: 280px;
+    margin-bottom: 1vh;
+  }
+
+  /* Misa section - ultra compact with horizontal layout for desktop */
+  .misa-content {
+    max-width: 1200px;
+    gap: 1.2vh;
+    padding-top: 1.2vh;
+    padding-bottom: 1.2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .misa-title-group {
+    margin-bottom: 1.2vh;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .misa-title-line1,
+  .misa-title-line2 {
+    font-size: 65px;
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
+
+  /* Horizontal layout for date, image, and location */
+  .misa-content-horizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    gap: 3rem;
+  }
+
+  .misa-left-info,
+  .misa-right-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .misa-center-image {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .misa-date-group {
+    margin: 0;
+  }
+
+  .misa-date {
+    font-size: 32px;
+    margin-bottom: 0.5vh;
+  }
+
+  .misa-time {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+
+  .misa-church-icon {
+    margin: 0;
+  }
+
+  .church-illustration {
+    max-width: 240px;
+    margin: 0;
+  }
+
+  .misa-location {
+    margin: 0 0 0.8vh 0;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .misa-location-button {
+    margin-top: 0.8vh;
+    margin-bottom: 0;
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
+  /* Fuente section - ultra compact with horizontal layout */
+  .fuente-content {
+    max-width: 1200px;
+    gap: 0.8vh;
+    padding-top: 0.8vh;
+    padding-bottom: 0.8vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fuente-title-group {
+    margin-bottom: 0.8vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fuente-top-line {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+    flex-wrap: nowrap;
+    margin-bottom: 0.2vh;
+  }
+
+  .fuente-the {
+    font-size: 28px;
+    margin-bottom: 0;
+    transform: translateY(-10px);
+  }
+
+  .fuente-prom {
+    font-size: 75px;
+    margin-bottom: 0;
+    margin-right: 15px;
+  }
+
+  .fuente-lem {
+    font-size: 39px;
+    margin-bottom: 0.6vh;
+    text-align: center;
+    align-self: center;
+    margin-right: 0;
+  }
+
+  /* Horizontal layout for date, image, and venue */
+  .fuente-horizontal-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    gap: 1.5rem;
+  }
+
+  .fuente-left-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fuente-center-content {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fuente-right-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fuente-date-group {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .fuente-day {
+    font-size: 48px;
+    margin: 0;
+  }
+
+  .fuente-month,
+  .fuente-year {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .date-separator-line {
+    width: 1px;
+    height: 25px;
+    background-color: #2b2b2b;
+  }
+
+  .fuente-image-container {
+    margin: 0;
+  }
+
+  .fuente-illustration {
+    max-width: 250px;
+    margin: 0;
+  }
+
+  .fuente-venue {
+    font-size: 24px;
+    margin: 0 0 0.4vh 0;
+    text-align: center;
+  }
+
+  .fuente-location {
+    margin: 0 0 0.4vh 0;
+    font-size: 11px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .fuente-location-button {
+    margin-top: 0.8vh;
+    margin-bottom: 0;
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
+  /* Dress code section - fixed spacing and no overlapping */
+  .dress-code-content {
+    max-width: 1200px;
+    gap: 0.6vh;
+    padding-top: 0.6vh;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .dress-code-title {
+    margin-bottom: 0.8vh;
+    text-align: center;
+  }
+
+  .dress-text {
+    font-size: 105px;
+    margin-bottom: 0.3vh;
+  }
+
+  .code-text {
+    font-size: 105px;
+    margin-bottom: 0.8vh;
+  }
+
+
+
+  .dress-code-info {
+    margin: 0.6vh 0;
+    height: auto;
+    min-height: auto;
+    gap: 1.4vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .dress-event-group {
+    margin-bottom: 0.6vh;
+    gap: 0.3vh;
+    width: 100%;
+    text-align: center;
+  }
+
+  .dress-event-title {
+    font-size: 18px;
+    margin-bottom: 0.3vh;
+  }
+
+  .dress-event-desc {
+    font-size: 14px;
+    margin-bottom: 0.5vh;
+  }
+
+  .dress-code-image {
+    margin-top: 0.6vh;
+    margin-bottom: 0;
+  }
+
+  .couple-illustration {
+    max-width: 240px;
+    margin: 0;
+  }
+
+  .hamburger-line {
+    width: 30px;
+    height: 4px;
+  }
+}
+
+/* Large desktop optimization - Still compact but slightly more breathing room */
+@media (min-width: 1440px) {
+  .app {
+    background-size: 20%, 25%;
+    background-position: bottom 0 right -3%, top 0 left -2%;
+  }
+
+  .content {
+    height: 100vh;
+    padding: 3vh 8% 3vh 8%;
+    overflow: hidden;
+    max-width: 1400px;
+  }
+
+  .save-the-date-section,
+  .misa-section,
+  .fuente-section,
+  .dress-code-section {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .save-the-date-content,
+  .misa-content,
+  .fuente-content,
+  .dress-code-content {
+    height: 100vh;
+    padding: 3vh 8% 3vh 8%;
+    box-sizing: border-box;
+    overflow: hidden;
+    max-width: 1400px;
+  }
+
+  .main-text {
+    font-size: 180px;
+    margin: 1vh 0 1.5vh 0;
+  }
+
+  .save-text {
+    font-size: 140px;
+    margin-bottom: 1vh;
+  }
+
+  .the-date-text {
+    font-size: 100px;
+    margin-bottom: 1.5vh;
+  }
+
+  .dress-text {
+    font-size: 105px;
+  }
+
+  .code-text {
+    font-size: 105px;
+  }
+
+  .misa-title-line1,
+  .misa-title-line2 {
+    font-size: 85px;
+    margin-bottom: 0.8vh;
+  }
+
+  .fuente-prom {
+    font-size: 120px;
+    margin-bottom: 1vh;
+  }
+
+  .fuente-lem {
+    font-size: 42px;
+    margin-bottom: 1.2vh;
+  }
+
+  /* Dress code optimizations for 1440px - no footer gap */
+  .dress-code-content {
+    gap: 0.8vh;
+    padding-bottom: 0;
+  }
+
+  /* Keep horizontal layout but with more space and LEM 129 below PROM */
+  .fuente-horizontal-layout {
+    gap: 3rem;
+    max-width: 1200px;
+  }
+
+  .fuente-title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fuente-top-line {
+    margin-bottom: 0.3vh;
+  }
+
+  .fuente-the {
+    font-size: 34px;
+  }
+
+  .fuente-prom {
+    font-size: 95px;
+  }
+
+  .fuente-lem {
+    font-size: 28px;
+    text-align: center;
+    margin-right: 0;
+  }
+
+  .fuente-day {
+    font-size: 58px;
+  }
+
+  .fuente-month,
+  .fuente-year {
+    font-size: 20px;
+  }
+
+  .fuente-illustration {
+    max-width: 280px;
+  }
+
+  .fuente-venue {
+    font-size: 28px;
+  }
+
+  .fuente-location {
+    font-size: 13px;
+  }
+
+  .misa-location-button {
+    font-size: 11px;
+    padding: 7px 14px;
+  }
+
+  .fuente-location-button {
+    font-size: 11px;
+    padding: 7px 14px;
+  }
+
+  .dress-text,
+  .code-text {
+    font-size: 105px;
+  }
+
+  .dress-event-title {
+    font-size: 18px;
+  }
+
+  .dress-event-desc {
+    font-size: 14px;
+  }
+
+  .couple-illustration {
+    max-width: 240px;
+  }
+
+  .graduation-photo {
+    max-width: 420px;
+    height: 320px;
+  }
+
+  .church-illustration {
+    max-width: 300px;
+  }
+}
+
+/* Ultra-wide desktop optimization - Maximum comfort while staying in 100vh */
+@media (min-width: 1920px) {
+  .app {
+    background-size: 15%, 20%;
+    background-position: bottom 0 right -2%, top 0 left -1%;
+  }
+
+  .content {
+    height: 100vh;
+    padding: 4vh 10% 4vh 10%;
+    overflow: hidden;
+    max-width: 1800px;
+  }
+
+  .save-the-date-section,
+  .misa-section,
+  .fuente-section,
+  .dress-code-section {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .save-the-date-content,
+  .misa-content,
+  .fuente-content,
+  .dress-code-content {
+    height: 100vh;
+    padding: 4vh 10% 4vh 10%;
+    max-width: 1800px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .main-text {
+    font-size: 200px;
+    margin: 1.5vh 0 2vh 0;
+  }
+
+  .save-text {
+    font-size: 160px;
+    margin-bottom: 1.5vh;
+  }
+
+  .the-date-text {
+    font-size: 120px;
+    margin-bottom: 2vh;
+  }
+
+  .dress-text {
+    font-size: 125px;
+    margin-bottom: 0.4vh;
+  }
+
+  .code-text {
+    font-size: 125px;
+    margin-bottom: 1vh;
+  }
+
+  .misa-title-line1,
+  .misa-title-line2 {
+    font-size: 95px;
+    margin-bottom: 1vh;
+  }
+
+  .fuente-prom {
+    font-size: 140px;
+    margin-bottom: 1.5vh;
+  }
+
+  .fuente-lem {
+    font-size: 48px;
+    margin-bottom: 1.8vh;
+  }
+
+  /* Ultra-wide layout for fuente section with LEM 129 below */
+  .fuente-horizontal-layout {
+    gap: 4rem;
+    max-width: 1400px;
+  }
+
+  .fuente-title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fuente-top-line {
+    margin-bottom: 0.4vh;
+  }
+
+  .fuente-the {
+    font-size: 40px;
+  }
+
+  .fuente-prom {
+    font-size: 115px;
+  }
+
+  .fuente-lem {
+    font-size: 34px;
+    text-align: center;
+    margin-right: 0;
+  }
+
+  .fuente-day {
+    font-size: 68px;
+  }
+
+  .fuente-month,
+  .fuente-year {
+    font-size: 24px;
+  }
+
+  .fuente-illustration {
+    max-width: 320px;
+  }
+
+  .fuente-venue {
+    font-size: 32px;
+  }
+
+  .fuente-location {
+    font-size: 15px;
+  }
+
+  .misa-location-button {
+    font-size: 13px;
+    padding: 9px 18px;
+  }
+
+  .fuente-location-button {
+    font-size: 13px;
+    padding: 9px 18px;
+  }
+
+  /* Dress code optimizations for ultra-wide - no footer gap */
+  .dress-code-content {
+    gap: 1vh;
+    padding-bottom: 0;
+  }
+
+  .dress-code-info {
+    gap: 1.6vh;
+  }
+
+  .dress-event-title {
+    font-size: 20px;
+    margin-bottom: 0.4vh;
+  }
+
+  .dress-event-desc {
+    font-size: 16px;
+    margin-bottom: 0.6vh;
+  }
+
+  .couple-illustration {
+    max-width: 280px;
+  }
+
+  .graduation-photo {
+    max-width: 480px;
+    height: 360px;
+  }
+
+  .church-illustration {
+    max-width: 340px;
+  }
+}
+
+/* ============================================ */
+/* SCROLL REVEAL ANIMATIONS */
+/* ============================================ */
+
+/* Base styles para elementos animados */
+.animated-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.animated-element.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade Animations */
+.fadeUp {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.fadeUp.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fadeDown {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.fadeDown.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fadeLeft {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+
+.fadeLeft.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fadeRight {
+  opacity: 0;
+  transform: translateX(60px);
+}
+
+.fadeRight.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide Animations */
+.slideLeft {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.slideLeft.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slideRight {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.slideRight.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slideDown {
+  opacity: 0;
+  transform: translateY(-80px);
+  transition: all 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.slideDown.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Zoom Animations */
+.zoomIn {
+  opacity: 0;
+  transform: scale(0.6);
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.zoomIn.animate-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.zoomOut {
+  opacity: 0;
+  transform: scale(1.4);
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.zoomOut.animate-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Bounce Animation */
+.bounceIn {
+  opacity: 0;
+  transform: scale(0.3);
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.bounceIn.animate-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Flip Animation */
+.flipX {
+  opacity: 0;
+  transform: rotateX(-90deg);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.flipX.animate-in {
+  opacity: 1;
+  transform: rotateX(0);
+}
+
+.flipY {
+  opacity: 0;
+  transform: rotateY(-90deg);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.flipY.animate-in {
+  opacity: 1;
+  transform: rotateY(0);
+}
+
+/* Rotate Animation */
+.rotateIn {
+  opacity: 0;
+  transform: rotate(-45deg) scale(0.8);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.rotateIn.animate-in {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+/* Simplified animations for specific elements */
+.date-icon, .church-illustration, .fuente-illustration, .couple-illustration {
+  transition: all 0.6s ease-out;
+}
+
+/* Simple stagger effect */
+.misa-title-line1, .misa-title-line2 {
+  transition: all 0.6s ease-out;
+}
+
+.dress-text, .code-text {
+  transition: all 0.6s ease-out;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animated-element {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .animated-element.animate-in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Mobile optimizations para animaciones */
+@media (max-width: 768px) {
+  .animated-element {
+    transition-duration: 0.4s;
+    transform: translateY(20px);
+  }
+} 
