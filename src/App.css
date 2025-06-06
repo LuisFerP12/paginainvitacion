@@ -1526,21 +1526,36 @@ html, body {
 
 
   .dress-code-info {
-    margin: 0.6vh 0;
+    margin: 2vh 0 3vh 0;
     height: auto;
     min-height: auto;
-    gap: 1.4vh;
+    gap: 4vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
     width: 100%;
+    max-width: 800px;
+    position: relative;
   }
 
   .dress-event-group {
-    margin-bottom: 0.6vh;
-    gap: 0.3vh;
-    width: 100%;
+    gap: 0.5vh;
+    width: 45%;
     text-align: center;
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+  }
+
+  .dress-event-group:first-child {
+    margin-top: 0;
+  }
+
+  .dress-event-group:last-child {
+    margin-top: 8vh;
   }
 
   .dress-event-title {
@@ -1643,8 +1658,18 @@ html, body {
 
   /* Dress code optimizations for 1440px - no footer gap */
   .dress-code-content {
-    gap: 0.8vh;
+    gap: 1vh;
     padding-bottom: 0;
+  }
+
+  .dress-code-info {
+    margin: 2.5vh 0 3.5vh 0;
+    gap: 5vh;
+    max-width: 900px;
+  }
+
+  .dress-event-group:last-child {
+    margin-top: 10vh;
   }
 
   /* Keep horizontal layout but with more space and LEM 129 below PROM */
@@ -1872,12 +1897,18 @@ html, body {
 
   /* Dress code optimizations for ultra-wide - no footer gap */
   .dress-code-content {
-    gap: 1vh;
+    gap: 1.2vh;
     padding-bottom: 0;
   }
 
   .dress-code-info {
-    gap: 1.6vh;
+    margin: 3vh 0 4vh 0;
+    gap: 6vh;
+    max-width: 1000px;
+  }
+
+  .dress-event-group:last-child {
+    margin-top: 12vh;
   }
 
   .dress-event-title {
