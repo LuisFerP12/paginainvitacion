@@ -6,6 +6,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'SloopScriptOne';
+  src: url('../public/font/Sloop-ScriptOne.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 /* Reset global styles */
@@ -82,13 +90,15 @@
   height: 3px;
   background-color: #2b2b2b;
   margin: 3px 0;
-  transition: 0.3s;
+  transition: background-color 0.3s ease;
 }
+
+
 
 /* Mobile hamburger animation */
 .line-1-active {
   transform: rotate(-45deg) translate(-5px, 6px);
-  background-color: white;
+  background-color: white !important;
 }
 
 .line-2-active {
@@ -97,7 +107,7 @@
 
 .line-3-active {
   transform: rotate(45deg) translate(-5px, -6px);
-  background-color: white;
+  background-color: white !important;
 }
 
 html, body {
@@ -2130,5 +2140,221 @@ html, body {
   .animated-element {
     transition-duration: 0.4s;
     transform: translateY(20px);
+  }
+}
+
+/* ============================================ */
+/* COUNTDOWN SECTION STYLES */
+/* ============================================ */
+
+/* Main countdown section container */
+.countdown-section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* Background slideshow styles - optimized and simplified */
+.countdown-bg-slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%) contrast(110%) brightness(105%);
+  opacity: 0;
+  will-change: background-image;
+  transform: translateZ(0); /* Force hardware acceleration */
+  z-index: 1; /* Behind overlay */
+  transition: background-image 800ms ease-in-out;
+}
+
+.countdown-bg-loaded {
+  opacity: 1;
+}
+
+.countdown-bg-loading {
+  opacity: 0;
+}
+
+/* Loading overlay */
+.countdown-loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 15; /* Above everything while loading */
+}
+
+.countdown-loading-content {
+  color: #f5f0e8;
+  text-align: center;
+}
+
+.countdown-spinner {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #f5f0e8;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.countdown-loading-text {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* Main overlay content */
+.countdown-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  color: #f5f0e8;
+  z-index: 10; /* Ensure text is always on top */
+}
+
+
+
+/* Main content styles */
+.countdown-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.countdown-branding {
+  margin-bottom: 24px;
+}
+
+.countdown-subtitle {
+  display: block;
+  font-size: clamp(10px, 2vw, 14px);
+  font-weight: normal;
+  letter-spacing: 2px;
+  opacity: 0.9;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.countdown-title {
+  font-size: clamp(48px, 8vw, 128px);
+  line-height: 0.8;
+  display: inline-block;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.countdown-title-text {
+  font-family: 'NotoSerifDisplayExtraCondensed', serif;
+  font-weight: normal;
+}
+
+.countdown-drop-cap {
+  font-family: 'SloopScriptOne', cursive;
+  font-size: clamp(96px, 12vw, 180px);
+  line-height: 0.7;
+  margin-right: 4px;
+  display: inline-block;
+  position: relative;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  transform: translateY(-0.05em);
+}
+
+/* Countdown timer styles */
+.countdown-timer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 8px;
+}
+
+.countdown-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(24px, 4vw, 48px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.countdown-label {
+  font-size: clamp(10px, 2vw, 14px);
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-top: 4px;
+  opacity: 0.85;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.countdown-colon {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(24px, 4vw, 48px);
+  font-weight: 500;
+  line-height: 1;
+  margin: 0 4px;
+  padding-top: 4px;
+}
+
+/* Mobile optimizations */
+@media (max-width: 767px) {
+  .countdown-bg-slideshow {
+    background-attachment: scroll; /* Better performance on mobile */
+    background-size: cover;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .countdown-overlay {
+    padding: 48px;
+  }
+  
+  .countdown-branding {
+    margin-bottom: 32px;
+  }
+  
+  .countdown-subtitle {
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+  
+  .countdown-unit {
+    margin: 0 12px;
   }
 } 

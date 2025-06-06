@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+import CountdownSection from './CountdownSection';
 import './App.css';
 
 // Componente para animaciones de aparición
@@ -35,9 +36,12 @@ function App() {
     }
     setMobileMenuOpen(false);
   };
-
+  
   return (
     <div className="app">
+      {/* COUNTDOWN SECTION */}
+      <CountdownSection />
+      
       {/* NAVBAR */}
       <nav className="navbar">
         <div className="nav-container">
@@ -172,12 +176,12 @@ function App() {
           <AnimatedSection animation="fadeUp" delay={200} className="dress-code-info">
             <div className="dress-event-group">
               <div className="dress-event-title">MISA DE GRADUACIÓN</div>
-              <div className="dress-event-desc">Vestimenta Formal</div>
+              <div className="dress-event-desc">Vestimenta Casual</div>
             </div>
             
             <div className="dress-event-group">
               <div className="dress-event-title">FIESTA DE GRADUACIÓN</div>
-              <div className="dress-event-desc">Vestimenta Casual</div>
+              <div className="dress-event-desc">Vestimenta Formal</div>
             </div>
           </AnimatedSection>
           
