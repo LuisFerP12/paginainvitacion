@@ -219,6 +219,7 @@ html, body {
   max-width: 600px;
   padding: 8vh 3% 6vh 3%;
   gap: 2vh;
+  overflow: visible;
 }
 
 .save-text {
@@ -227,11 +228,19 @@ html, body {
   font-style: italic;
   letter-spacing: -0.08em;
   color: #8b1a1a;
-  line-height: 0.8;
+  line-height: 1.2;
   font-family: 'NotoSerifDisplayExtraCondensed', serif;
   margin: 0;
   text-align: center;
   transform: translateX(-2px);
+  /* Safari fixes */
+  overflow: visible;
+  -webkit-transform: translateZ(0) translateX(-2px);
+  backface-visibility: hidden;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  position: relative;
+  z-index: 1;
 }
 
 .the-date-text {
@@ -450,10 +459,18 @@ html, body {
   font-style: italic;
   letter-spacing: -0.06em;
   color: #2b2b2b;
-  line-height: 0.9;
+  line-height: 1.2;
   font-family: 'NotoSerifDisplayExtraCondensed', serif;
   margin: 0;
   text-align: center;
+  /* Safari fixes */
+  overflow: visible;
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  position: relative;
+  z-index: 1;
 }
 
 .misa-title-line2 {
@@ -462,11 +479,19 @@ html, body {
   font-style: italic;
   letter-spacing: -0.06em;
   color: #2b2b2b;
-  line-height: 0.9;
+  line-height: 1.2;
   font-family: 'NotoSerifDisplayExtraCondensed', serif;
   margin: 0;
   text-align: center;
   margin-top: -5px;
+  /* Safari fixes */
+  overflow: visible;
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  position: relative;
+  z-index: 1;
 }
 
 .misa-date-group {
@@ -2247,10 +2272,12 @@ html, body {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  overflow: visible;
 }
 
 .countdown-branding {
   margin-bottom: 24px;
+  overflow: visible;
 }
 
 .countdown-subtitle {
@@ -2270,6 +2297,7 @@ html, body {
   display: inline-block;
   margin-bottom: 0;
   position: relative;
+  overflow: visible;
 }
 
 .countdown-title-text {
@@ -2280,12 +2308,19 @@ html, body {
 .countdown-drop-cap {
   font-family: 'SloopScriptOne', cursive;
   font-size: clamp(96px, 12vw, 180px);
-  line-height: 0.7;
+  line-height: 1.2;
   margin-right: 4px;
   display: inline-block;
   position: relative;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
   transform: translateY(-0.05em);
+  /* Safari fixes */
+  overflow: visible;
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  z-index: 1;
 }
 
 /* Countdown timer styles */
