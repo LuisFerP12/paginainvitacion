@@ -219,7 +219,6 @@ html, body {
   max-width: 600px;
   padding: 8vh 3% 6vh 3%;
   gap: 2vh;
-  overflow: visible;
 }
 
 .save-text {
@@ -228,19 +227,11 @@ html, body {
   font-style: italic;
   letter-spacing: -0.08em;
   color: #8b1a1a;
-  line-height: 1.2;
+  line-height: 0.8;
   font-family: 'NotoSerifDisplayExtraCondensed', serif;
   margin: 0;
   text-align: center;
   transform: translateX(-2px);
-  /* Safari fixes */
-  overflow: visible;
-  -webkit-transform: translateZ(0) translateX(-2px);
-  backface-visibility: hidden;
-  padding-top: 0.1em;
-  padding-bottom: 0.1em;
-  position: relative;
-  z-index: 1;
 }
 
 .the-date-text {
@@ -459,18 +450,10 @@ html, body {
   font-style: italic;
   letter-spacing: -0.06em;
   color: #2b2b2b;
-  line-height: 1.2;
+  line-height: 0.9;
   font-family: 'NotoSerifDisplayExtraCondensed', serif;
   margin: 0;
   text-align: center;
-  /* Safari fixes */
-  overflow: visible;
-  -webkit-transform: translateZ(0);
-  backface-visibility: hidden;
-  padding-top: 0.1em;
-  padding-bottom: 0.1em;
-  position: relative;
-  z-index: 1;
 }
 
 .misa-title-line2 {
@@ -479,19 +462,11 @@ html, body {
   font-style: italic;
   letter-spacing: -0.06em;
   color: #2b2b2b;
-  line-height: 1.2;
+  line-height: 0.9;
   font-family: 'NotoSerifDisplayExtraCondensed', serif;
   margin: 0;
   text-align: center;
   margin-top: -5px;
-  /* Safari fixes */
-  overflow: visible;
-  -webkit-transform: translateZ(0);
-  backface-visibility: hidden;
-  padding-top: 0.1em;
-  padding-bottom: 0.1em;
-  position: relative;
-  z-index: 1;
 }
 
 .misa-date-group {
@@ -2291,6 +2266,12 @@ html, body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.countdown-title-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: visible;
+}
+
 .countdown-title {
   font-size: clamp(48px, 8vw, 128px);
   line-height: 0.8;
@@ -2298,6 +2279,7 @@ html, body {
   margin-bottom: 0;
   position: relative;
   overflow: visible;
+  margin-left: clamp(40px, 8vw, 80px); /* Espacio para la P */
 }
 
 .countdown-title-text {
@@ -2305,22 +2287,27 @@ html, body {
   font-weight: normal;
 }
 
+.countdown-drop-cap-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%); /* Solo un transform simple */
+  overflow: visible; /* Muy importante */
+  z-index: 2;
+}
+
 .countdown-drop-cap {
   font-family: 'SloopScriptOne', cursive;
   font-size: clamp(96px, 12vw, 180px);
   line-height: 1.2;
-  margin-right: 4px;
   display: inline-block;
   position: relative;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-  transform: translateY(-0.05em);
-  /* Safari fixes */
+  /* Safari fixes - sin transforms complicados */
   overflow: visible;
-  -webkit-transform: translateZ(0);
-  backface-visibility: hidden;
-  padding-top: 0.1em;
-  padding-bottom: 0.1em;
-  z-index: 1;
+  padding-top: 0.15em;
+  padding-bottom: 0.15em;
+  margin: 0;
 }
 
 /* Countdown timer styles */
@@ -2370,6 +2357,14 @@ html, body {
   .countdown-bg-slideshow {
     background-attachment: scroll; /* Better performance on mobile */
     background-size: cover;
+  }
+  
+  .countdown-title {
+    margin-left: clamp(30px, 6vw, 50px); /* Menos espacio en móvil */
+  }
+  
+  .countdown-drop-cap-wrapper {
+    left: -5px; /* Ajuste fino para móvil */
   }
 }
 
