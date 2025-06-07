@@ -102,7 +102,7 @@ function App() {
       <div id="misa" className="misa-section">
         <div className="misa-content">
           <AnimatedSection animation="fadeUp" delay={100} className="misa-title-group">
-            <div className="misa-title-line1">Misa de Acción de</div>
+            <div className="misa-title-line1">Misa de Acción de </div>
             <div className="misa-title-line2">Gracias</div>
           </AnimatedSection>
           

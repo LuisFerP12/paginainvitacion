@@ -123,14 +123,11 @@ export default function CountdownSection() {
             </span>
 
             {/* Title with Drop Cap */}
-            <div className="countdown-title-wrapper">
-              <div className="countdown-title">
-                <span className="countdown-title-text">ROM LEM 129</span>
-              </div>
-              {/* P aislada en su propio contenedor */}
-              <div className="countdown-drop-cap-wrapper">
-                <span className="countdown-drop-cap">P</span>
-              </div>
+            <div className="countdown-title">
+              <span className="countdown-drop-cap">
+                P
+              </span>
+              <span className="countdown-title-text">ROM LEM 129</span>
             </div>
           </div>
 

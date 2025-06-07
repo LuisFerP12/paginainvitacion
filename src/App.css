@@ -2266,12 +2266,6 @@ html, body {
   font-family: 'Montserrat', sans-serif;
 }
 
-.countdown-title-wrapper {
-  position: relative;
-  display: inline-block;
-  overflow: visible;
-}
-
 .countdown-title {
   font-size: clamp(48px, 8vw, 128px);
   line-height: 0.8;
@@ -2279,7 +2273,6 @@ html, body {
   margin-bottom: 0;
   position: relative;
   overflow: visible;
-  margin-left: clamp(40px, 8vw, 80px); /* Espacio para la P */
 }
 
 .countdown-title-text {
@@ -2287,27 +2280,23 @@ html, body {
   font-weight: normal;
 }
 
-.countdown-drop-cap-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%); /* Solo un transform simple */
-  overflow: visible; /* Muy importante */
-  z-index: 2;
-}
-
 .countdown-drop-cap {
   font-family: 'SloopScriptOne', cursive;
   font-size: clamp(96px, 12vw, 180px);
   line-height: 1.2;
+  margin-right: -12px;
   display: inline-block;
   position: relative;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-  /* Safari fixes - sin transforms complicados */
+  transform: translateY(-0.05em);
+  /* Safari fixes */
   overflow: visible;
-  padding-top: 0.15em;
-  padding-bottom: 0.15em;
-  margin: 0;
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  padding-right: 20px;
+  z-index: 1;
 }
 
 /* Countdown timer styles */
@@ -2357,14 +2346,6 @@ html, body {
   .countdown-bg-slideshow {
     background-attachment: scroll; /* Better performance on mobile */
     background-size: cover;
-  }
-  
-  .countdown-title {
-    margin-left: clamp(30px, 6vw, 50px); /* Menos espacio en móvil */
-  }
-  
-  .countdown-drop-cap-wrapper {
-    left: -5px; /* Ajuste fino para móvil */
   }
 }
 
