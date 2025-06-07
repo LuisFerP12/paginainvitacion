@@ -123,7 +123,9 @@ function App() {
           </AnimatedSection>
           
           <AnimatedSection animation="fadeUp" delay={500} className="misa-location-button">
-            VER UBICACIÓN
+            <a href="https://maps.app.goo.gl/QenMQszETRjZeRs88" target="_blank" rel="noopener noreferrer">
+              VER UBICACIÓN
+            </a>
           </AnimatedSection>
         </div>
       </div>
@@ -160,7 +162,9 @@ function App() {
           </AnimatedSection>
           
           <AnimatedSection animation="fadeUp" delay={600} className="fuente-location-button">
-            VER UBICACIÓN
+            <a href="https://maps.app.goo.gl/5WKPhJ1zRY6KvrsH6" target="_blank" rel="noopener noreferrer">
+              VER UBICACIÓN
+            </a>
           </AnimatedSection>
         </div>
       </div>
