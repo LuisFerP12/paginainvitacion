@@ -107,7 +107,7 @@ function App() {
           </AnimatedSection>
           
           <AnimatedSection animation="fadeUp" delay={200} className="misa-date-group">
-            <div className="misa-date">Sábado 08 Junio</div>
+            <div className="misa-date">Sábado 28 Junio</div>
             <div className="misa-time">a las 12:00 pm</div>
           </AnimatedSection>
           
@@ -144,7 +144,7 @@ function App() {
           <AnimatedSection animation="fadeUp" delay={200} className="fuente-date-group">
             <div className="fuente-month">JUNIO</div>
             <div className="date-separator-line"></div>
-            <div className="fuente-day">08</div>
+            <div className="fuente-day">29</div>
             <div className="date-separator-line"></div>
             <div className="fuente-year">2025</div>
           </AnimatedSection>
